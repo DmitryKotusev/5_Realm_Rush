@@ -7,7 +7,7 @@ public class PathFinder : MonoBehaviour
 {
     [SerializeField] WayPoint startWayPoint, endWayPoint;
 
-    Dictionary<Vector2Int, WayPoint> grid = new Dictionary<Vector2Int, WayPoint>();
+    Dictionary<Vector2Int, WayPoint> grid;
 
     Vector2Int[] directions = {
         Vector2Int.up,
@@ -18,7 +18,10 @@ public class PathFinder : MonoBehaviour
 
     public List<WayPoint> GetPath()
     {
-        LoadBlocks();
+        if (grid == null)
+        {
+            LoadBlocks();
+        }
         ColorStartAndEnd();
         return PathFind();
     }
@@ -97,6 +100,7 @@ public class PathFinder : MonoBehaviour
 
     private void LoadBlocks()
     {
+        grid = new Dictionary<Vector2Int, WayPoint>();
         var wayPoints = FindObjectsOfType<WayPoint>();
         foreach (WayPoint wayPoint in wayPoints)
         {
