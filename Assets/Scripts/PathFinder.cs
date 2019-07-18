@@ -22,7 +22,6 @@ public class PathFinder : MonoBehaviour
         {
             LoadBlocks();
         }
-        ColorStartAndEnd();
         return PathFind();
     }
 
@@ -90,12 +89,6 @@ public class PathFinder : MonoBehaviour
                 queue.Enqueue(neighbor);
             }
         }
-    }
-
-    private void ColorStartAndEnd()
-    {
-        startWayPoint.SetTopColor(Color.cyan);
-        endWayPoint.SetTopColor(Color.green);
     }
 
     private void LoadBlocks()
