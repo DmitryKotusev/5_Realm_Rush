@@ -22,6 +22,9 @@ public class WayPoint : MonoBehaviour
 
     private void OnMouseOver()
     {
-        Debug.Log(gameObject.name);
+        if (Input.GetMouseButtonDown(0))
+        {
+            Debug.Log(gameObject.name);
+        }
     }
 }
