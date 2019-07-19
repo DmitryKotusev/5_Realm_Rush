@@ -46,7 +46,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   objectToPan: {fileID: 5728694129407304792}
-  targetEnemy: {fileID: 0}
   attackRange: 30
   projectile: {fileID: 5732795028259048134}
 --- !u!1001 &5448809379874762665
@@ -120,6 +119,11 @@ PrefabInstance:
         type: 3}
       propertyPath: InitialModule.startSpeed.scalar
       value: 200
+      objectReference: {fileID: 0}
+    - target: {fileID: 293004418289362287, guid: ef55114a9bff34442a8315a067458738,
+        type: 3}
+      propertyPath: CollisionModule.minKillSpeed
+      value: 1000
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ef55114a9bff34442a8315a067458738, type: 3}

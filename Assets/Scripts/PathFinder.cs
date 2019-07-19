@@ -104,6 +104,7 @@ public class PathFinder : MonoBehaviour
             else
             {
                 grid.Add(wayPoint.GetGridPos(), wayPoint);
+                wayPoint.isPlaceble = true;
             }
         }
     }
