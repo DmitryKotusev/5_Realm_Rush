@@ -150,8 +150,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1749623deb219d347abc9071b6473a92, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  towerPrefab: {fileID: 5732795028078547955, guid: 01bb480cb5b636e42acc6a7c40fdd433,
-    type: 3}
+  isPlaceble: 1
 --- !u!65 &781172033678738223
 BoxCollider:
   m_ObjectHideFlags: 0

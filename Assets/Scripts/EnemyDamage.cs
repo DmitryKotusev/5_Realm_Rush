@@ -29,7 +29,7 @@ public class EnemyDamage : MonoBehaviour
     {
         GameObject deathParticlesInstance
             = Instantiate(deathParticles, transform.position, Quaternion.identity);
-        Destroy(deathParticlesInstance, 2f);
+        Destroy(deathParticlesInstance, deathParticlesInstance.GetComponent<ParticleSystem>().main.duration);
         Destroy(gameObject);
     }
 

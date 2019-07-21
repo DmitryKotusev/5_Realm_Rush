@@ -14,6 +14,8 @@ public class Tower : MonoBehaviour
 
     Transform targetEnemy;
 
+    WayPoint placementCoordinate;
+
     void Update()
     {
         SetTargetEnemy();
@@ -66,5 +68,15 @@ public class Tower : MonoBehaviour
     {
         var emissionModule = projectile.emission;
         emissionModule.enabled = doShoot;
+    }
+
+    public void SetPlacementCoordinate(WayPoint placementCoordinate)
+    {
+        this.placementCoordinate = placementCoordinate;
+    }
+
+    public WayPoint GetPlacementCoordinate()
+    {
+        return placementCoordinate;
     }
 }
