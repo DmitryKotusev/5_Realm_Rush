@@ -12,6 +12,8 @@ public class EnemySpawner : MonoBehaviour
     Transform spawnInfo;
     [SerializeField]
     Text enemyCountText;
+    [SerializeField]
+    AudioClip spawnEnemySFX;
     int score;
 
     private void Start()
@@ -25,6 +27,7 @@ public class EnemySpawner : MonoBehaviour
         while (true)
         {
             yield return new WaitForSeconds(secondsBetweenSpawns);
+            GetComponent<AudioSource>().PlayOneShot(spawnEnemySFX);
             AddScore();
             Instantiate(enemyPrefab, spawnInfo.position, spawnInfo.rotation, transform);
         }

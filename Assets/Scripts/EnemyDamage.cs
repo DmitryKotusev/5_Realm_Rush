@@ -11,6 +11,10 @@ public class EnemyDamage : MonoBehaviour
     GameObject deathParticles;
     [SerializeField]
     GameObject hitParticles;
+    [SerializeField]
+    AudioClip hitSFX;
+    [SerializeField]
+    AudioClip deathSFX;
     void Start()
     {
         
@@ -30,6 +34,7 @@ public class EnemyDamage : MonoBehaviour
         GameObject deathParticlesInstance
             = Instantiate(deathParticles, transform.position, Quaternion.identity);
         Destroy(deathParticlesInstance, deathParticlesInstance.GetComponent<ParticleSystem>().main.duration);
+        AudioSource.PlayClipAtPoint(deathSFX, transform.position);
         Destroy(gameObject);
     }
 
@@ -38,6 +43,7 @@ public class EnemyDamage : MonoBehaviour
         GameObject hitParticlesInstance
             = Instantiate(hitParticles, transform.position, Quaternion.identity);
         Destroy(hitParticlesInstance, 2f);
+        GetComponent<AudioSource>().PlayOneShot(hitSFX);
         hitPoints--;
     }
 }

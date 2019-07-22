@@ -9,6 +9,8 @@ public class PlayerHealth : MonoBehaviour
     int healthDecrease = 1;
     [SerializeField]
     Text healthText;
+    [SerializeField]
+    AudioClip reachTargetSFX;
 
     private void Start()
     {
@@ -19,5 +21,6 @@ public class PlayerHealth : MonoBehaviour
     {
         health -= healthDecrease;
         healthText.text = health.ToString();
+        GetComponent<AudioSource>().PlayOneShot(reachTargetSFX);
     }
 }
